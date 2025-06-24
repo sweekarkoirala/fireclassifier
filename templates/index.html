@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fire Detection Classifier</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 60px 80px;
+            border-radius: 18px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+            width: 800px;
+            max-width: 95%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 25px auto;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #ff5722;
+            color: white;
+            padding: 12px 28px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: red;
+        }
+
+        .result {
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fire vs. Non-Fire Classifier</h1>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction %}
+            <div class="result">Prediction: {{ prediction }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

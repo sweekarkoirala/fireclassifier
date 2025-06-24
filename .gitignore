@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+uploads/
+*.h5
+.env
+.vscode/
+.idea/
+
